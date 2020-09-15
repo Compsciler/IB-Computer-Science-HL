@@ -1,10 +1,12 @@
 package com.company;
+import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Grid grid = new Grid();
-        grid.generateRandomStates();
+        // Grid.generateRandomStates(grid, 5);
+        Grid.loadFile(grid, "C:\\Users\\roger\\OneDrive\\Desktop\\IB-Computer-Science-HL\\ConwaysGameOfLife\\src\\com\\company\\seed.txt");
         grid.printConsole();
         System.out.println();
         for (int i = 0; i < 10; i++){
@@ -17,26 +19,65 @@ public class Main {
 
 
 class Grid {
-    private int gridSize = 5;
+    private int gridSize;
     private boolean isWrapAround = false;
     private double aliveChance = 0.3;
     private Cell[][] cells;
 
     public Grid(){
+
+    }
+    public Grid(int gridSize){
+        this.gridSize = gridSize;
         cells = new Cell[gridSize][gridSize];
     }
 
-    public void generateRandomStates() {
+    public static void loadFile(Grid grid, String filePath) throws FileNotFoundException {
+        File file = new File(filePath);
+        Scanner sc = new Scanner(file);
+        int lineLength = -1;
+        int lineNum = 0;
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine().replace(" ", "");
+            int newLineLength = line.length();
+            if (newLineLength != lineLength && lineLength != -1){
+                System.out.println("Non-square grid entered!");
+                System.exit(1);
+                // return;
+            }
+            if (lineLength == -1){
+                lineLength = newLineLength;
+                grid.setGridSize(lineLength);
+            }
+            for (int i = 0; i < lineLength; i++){
+                char c = line.charAt(i);
+                if (c == '.'){
+                    grid.cells[lineNum][i] = new Cell(false, lineNum, i);
+                } else {
+                    grid.cells[lineNum][i] = new Cell(true, lineNum, i);
+                }
+            }
+            lineNum++;
+        }
+        if (lineNum != lineLength){
+            System.out.println("Non-square grid entered!");
+            System.exit(1);
+            // return;
+        }
+    }
+
+    public static void generateRandomStates(Grid grid, int gridSize) {
         Random rand = new Random();
+        grid.setGridSize(gridSize);
         for (int r = 0; r < gridSize; r++){
             for (int c = 0; c < gridSize; c++){
                 Cell cell;
-                if (rand.nextDouble() < aliveChance) {
+                if (rand.nextDouble() < grid.aliveChance) {
                     cell = new Cell(true, r, c);
                 } else {
                     cell = new Cell(false, r, c);
                 }
-                cells[r][c] = cell;
+                grid.cells[r][c] = cell;
             }
         }
         /*
@@ -116,6 +157,11 @@ class Grid {
             }
             System.out.println();
         }
+    }
+
+    public void setGridSize(int gridSize){
+        this.gridSize = gridSize;
+        cells = new Cell[gridSize][gridSize];
     }
 }
 
