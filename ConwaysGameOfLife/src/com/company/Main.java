@@ -1,19 +1,49 @@
 package com.company;
 import java.io.*;
 import java.util.*;
+import javax.swing.*;
+import java.awt.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-        Grid grid = new Grid();
-        // Grid.generateRandomStates(grid, 5);
+    public static Grid grid;
+    public static final int GENERATION_TIME = 200;
+    public static final int X_BUFFER = 12;
+    public static final int Y_BUFFER = 36;
+
+    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+        grid = new Grid();
+        // Grid.generateRandomStates(grid, grid.getGridSize());
         Grid.loadFile(grid, "C:\\Users\\roger\\OneDrive\\Desktop\\IB-Computer-Science-HL\\ConwaysGameOfLife\\src\\com\\company\\seed.txt");
         grid.printConsole();
         System.out.println();
-        for (int i = 0; i < 10; i++){
+
+        JFrame jFrame = new JFrame();
+        GridPanel gridPanel = new GridPanel();
+        jFrame.setPreferredSize(new Dimension((grid.getGridSize() * GridPanel.CELL_PIXEL_LENGTH + X_BUFFER), (grid.getGridSize() * GridPanel.CELL_PIXEL_LENGTH + Y_BUFFER)));
+        jFrame.add(gridPanel);
+        jFrame.pack();
+        jFrame.setVisible(true);
+
+        Thread.sleep(GENERATION_TIME);
+        while (true){
             grid.update();
+            Thread.sleep(GENERATION_TIME);
+            // gridPanel.paintCells(grid, new Graphics());
             grid.printConsole();
             System.out.println();
+            gridPanel.repaint();
         }
+    }
+}
+
+class GridPanel extends JPanel {
+    public static final int CELL_PIXEL_LENGTH = 16;
+
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        g.setColor(Color.BLACK);
+        Main.grid.paintPanel(g);
     }
 }
 
@@ -21,7 +51,7 @@ public class Main {
 class Grid {
     private int gridSize;
     private boolean isWrapAround = false;
-    private double aliveChance = 0.3;
+    private double aliveChance = 0.2;
     private Cell[][] cells;
 
     public Grid(){
@@ -157,6 +187,21 @@ class Grid {
             }
             System.out.println();
         }
+    }
+
+    public void paintPanel(Graphics g){
+        for (int r = 0; r < gridSize; r++){
+            for (int c = 0; c < gridSize; c++){
+                Cell cell = cells[r][c];
+                if (cell.getIsAlive()) {
+                    g.fillRect((c * GridPanel.CELL_PIXEL_LENGTH), (r * GridPanel.CELL_PIXEL_LENGTH), GridPanel.CELL_PIXEL_LENGTH, GridPanel.CELL_PIXEL_LENGTH);
+                }
+            }
+        }
+    }
+
+    public int getGridSize(){
+        return gridSize;
     }
 
     public void setGridSize(int gridSize){
