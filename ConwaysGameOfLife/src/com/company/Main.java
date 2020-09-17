@@ -6,14 +6,14 @@ import java.awt.*;
 
 public class Main {
     public static Grid grid;
-    public static final int GENERATION_TIME = 200;
+    public static final int GENERATION_TIME = 50;  // DEMO 7
     public static final int X_BUFFER = 12;
     public static final int Y_BUFFER = 36;
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
-        grid = new Grid();
-        // Grid.generateRandomStates(grid, grid.getGridSize());
-        Grid.loadFile(grid, "C:\\Users\\roger\\OneDrive\\Desktop\\IB-Computer-Science-HL\\ConwaysGameOfLife\\src\\com\\company\\seed.txt");
+        grid = new Grid(50);  // DEMO 8
+        Grid.generateRandomStates(grid, grid.getGridSize());  // DEMO 9
+        // Grid.loadFile(grid, "C:\\Users\\roger\\OneDrive\\Desktop\\IB-Computer-Science-HL\\ConwaysGameOfLife\\src\\com\\company\\seed2.txt");  // DEMO 5
         grid.printConsole();
         System.out.println();
 
@@ -48,10 +48,10 @@ class GridPanel extends JPanel {
 }
 
 
-class Grid {
+class Grid {  // DEMO 2
     private int gridSize;
-    private boolean isWrapAround = false;
-    private double aliveChance = 0.2;
+    private boolean isWrapAround = true;  // DEMO 6, DEMO 11
+    private double aliveChance = 0.25;  // DEMO 10
     private Cell[][] cells;
 
     public Grid(){
@@ -62,7 +62,7 @@ class Grid {
         cells = new Cell[gridSize][gridSize];
     }
 
-    public static void loadFile(Grid grid, String filePath) throws FileNotFoundException {
+    public static void loadFile(Grid grid, String filePath) throws FileNotFoundException {  // DEMO 3
         File file = new File(filePath);
         Scanner sc = new Scanner(file);
         int lineLength = -1;
@@ -96,7 +96,7 @@ class Grid {
         }
     }
 
-    public static void generateRandomStates(Grid grid, int gridSize) {
+    public static void generateRandomStates(Grid grid, int gridSize) {  // DEMO 4 -> seed.txt
         Random rand = new Random();
         grid.setGridSize(gridSize);
         for (int r = 0; r < gridSize; r++){
@@ -211,7 +211,7 @@ class Grid {
 }
 
 
-class Cell {
+class Cell {  // DEMO 1
     private boolean isAlive;
     private boolean isNextGenAlive;
 
