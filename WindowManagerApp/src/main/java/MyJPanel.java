@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MyJPanel extends JPanel implements MouseListener {
+public class MyJPanel extends JPanel implements MouseListener, KeyListener {
     private WindowManager windowManager;
     /**
      * Creates new form MyJPanel
@@ -27,21 +27,27 @@ public class MyJPanel extends JPanel implements MouseListener {
             windowManager.addWindow();
         }
         addMouseListener(this);
+        addKeyListener(this);
         // jFrame.repaint();
     }
     
     @Override
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         windowManager.drawWindows(g);
     }
     
     @Override
     public void mouseClicked(MouseEvent e) {
         Window clickedWindow = windowManager.findWindowByPosition(e.getX(), e.getY());
+        if (clickedWindow == null){
+            return;
+        }
         for (int i = 0; i < windowManager.getWindows().size(); i++){
             System.out.println(i);
             if (windowManager.getWindows().get(i).getZOrder() == clickedWindow.getZOrder()){
                 windowManager.bringToFront(i);
+                WindowProject.jFrame.repaint();
+                return;
             }
         }
     }
@@ -64,6 +70,24 @@ public class MyJPanel extends JPanel implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         
+    }
+    
+    @Override
+    public void keyTyped(KeyEvent key) {
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent key) {
+        if (key.getKeyCode() == KeyEvent.VK_N){
+            windowManager.addWindow();
+            WindowProject.jFrame.repaint();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent key) {
+
     }
 
     /**
