@@ -43,7 +43,6 @@ public class MyJPanel extends JPanel implements MouseListener, KeyListener {
             return;
         }
         for (int i = 0; i < windowManager.getWindows().size(); i++){
-            System.out.println(i);
             if (windowManager.getWindows().get(i).getZOrder() == clickedWindow.getZOrder()){
                 windowManager.bringToFront(i);
                 WindowProject.jFrame.repaint();

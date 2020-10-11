@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c06806eb-58e4-40f8-8c04-869372f7bcf8" name="Default Changelist" comment="" />
+    <list default="true" id="018c5bf2-30d7-48ad-84ed-91f40006b1ea" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1iHZz4gSiPcQHRheSqlz7HctTJl" />
+  <component name="ProjectId" id="1ikQJ2GKcWY261TgC61LU5EKiK2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,45 +45,39 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="untitled" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c06806eb-58e4-40f8-8c04-869372f7bcf8" name="Default Changelist" comment="" />
-      <created>1601566737754</created>
+      <changelist id="018c5bf2-30d7-48ad-84ed-91f40006b1ea" name="Default Changelist" comment="" />
+      <created>1602449038080</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601566737754</updated>
-      <workItem from="1601566739238" duration="3453000" />
-      <workItem from="1601595670935" duration="42000" />
-      <workItem from="1601911351145" duration="2058000" />
-      <workItem from="1602201338823" duration="6740000" />
-      <workItem from="1602235398997" duration="1000" />
-      <workItem from="1602448523586" duration="514000" />
+      <updated>1602449038080</updated>
+      <workItem from="1602449039178" duration="3986000" />
+      <workItem from="1602456516266" duration="36000" />
     </task>
     <servers />
   </component>
@@ -103,33 +97,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="495" y="219" key="#Project_Structure" timestamp="1601566753187">
+    <state x="779" y="371" key="SettingsEditor" timestamp="1602454550236">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="495" y="219" key="#Project_Structure/0.0.2560.1440@0.0.2560.1440" timestamp="1601566753187" />
-    <state x="1357" y="506" key="FileChooserDialogImpl" timestamp="1602448993242">
+    <state x="779" y="371" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1602454550236" />
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1602454462712">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1357" y="506" key="FileChooserDialogImpl/0.0.2560.1440@0.0.2560.1440" timestamp="1602448993242" />
-    <state width="973" height="414" key="GridCell.Tab.0.bottom" timestamp="1602209056180">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="973" height="414" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1602209056180" />
-    <state width="973" height="414" key="GridCell.Tab.0.center" timestamp="1602209056179">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="973" height="414" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1602209056179" />
-    <state width="973" height="414" key="GridCell.Tab.0.left" timestamp="1602209056179">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="973" height="414" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1602209056179" />
-    <state width="973" height="414" key="GridCell.Tab.0.right" timestamp="1602209056180">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="973" height="414" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1602209056180" />
-    <state x="1027" y="385" key="new project wizard" timestamp="1602449034646">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1027" y="385" key="new project wizard/0.0.2560.1440@0.0.2560.1440" timestamp="1602449034646" />
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1602454462712" />
   </component>
 </project>

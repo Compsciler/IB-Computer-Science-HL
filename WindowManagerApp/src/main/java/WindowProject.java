@@ -32,7 +32,5 @@ public class WindowProject {
         jPanel.setVisible(true);
         jPanel.setFocusable(true);
         jPanel.requestFocusInWindow();
-        
-        System.out.println("HERE 2");
     }
 }

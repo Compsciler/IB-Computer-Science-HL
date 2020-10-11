@@ -96,7 +96,7 @@ class Window implements Comparable<Window> {
     
     @Override
     public int compareTo(Window other) {
-        return (zOrder - other.zOrder);  // May be reversed
+        return (zOrder - other.zOrder);
     }
     
     public int getX() {
