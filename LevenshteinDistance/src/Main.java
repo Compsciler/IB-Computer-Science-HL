@@ -1,12 +1,13 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
     public static Set<String> dictionaryWords;
     public static Map<String, Set<String>> dictionaryMap;
 
-    public static String startWord = "cat";  // Must come from dictionary
-    public static String endWord = "dog";
+    public static String startWord = "";  // Must be in dictionary
+    public static String endWord = "";  // Must be in dictionary
     public static Queue<String> wordsToCheck;
     public static Set<String> checkedWords;
     public static Map<String, String> parentWordMap;
@@ -21,7 +22,10 @@ public class Main {
         loadDictionary("dictionary words smaller.txt");
         // System.out.println(dictionaryMap);
 
+        pickRandomStartAndEndWordIfEmpty();
         List<String> levSequence = calculateLevDistance(startWord, endWord);
+        int levDistance = (levSequence.size() == 0) ? -1 : (levSequence.size() - 1);
+        System.out.println(startWord + " -> " + endWord + ": " + levDistance);
         System.out.println(levSequence);
 
         float endTimeInMillis = calendar.getTimeInMillis();
@@ -57,10 +61,12 @@ public class Main {
 
     public static void addAdjacentWords(String word){
         Set<String> adjacentWords = dictionaryMap.get(word);
-        adjacentWords.removeAll(checkedWords);
-        for (String adjacentWord: adjacentWords){
-            wordsToCheck.add(adjacentWord);
-            parentWordMap.put(adjacentWord, word);
+        if (adjacentWords != null){
+            adjacentWords.removeAll(checkedWords);
+            for (String adjacentWord: adjacentWords){
+                wordsToCheck.add(adjacentWord);
+                parentWordMap.put(adjacentWord, word);
+            }
         }
         checkedWords.add(word);
     }
@@ -133,6 +139,46 @@ public class Main {
                 Set<String> wordSet = new HashSet<>();
                 wordSet.add(wordValue);
                 dictionaryMap.put(wordKey, wordSet);
+            }
+        }
+    }
+
+    public static List<String> pickRandomWordsFromDictionary(int numWords){
+        Random rand = new Random();
+        TreeSet<Integer> randomIndices = new TreeSet<>();
+        int dictionarySize = dictionaryWords.size();
+        for (int i = 0; i < numWords; i++){
+            randomIndices.add(rand.nextInt(dictionarySize));
+        }
+        List<String> res = new ArrayList<>();
+        int i = 0;
+        for (String s: dictionaryWords){
+            if (i == randomIndices.first()){
+                res.add(s);
+                randomIndices.pollFirst();
+                if (randomIndices.isEmpty()){
+                    break;
+                }
+            }
+            i++;
+        }
+        return res;
+    }
+
+    public static void pickRandomStartAndEndWordIfEmpty(){
+        int randomWordTotal = 0;
+        randomWordTotal += (startWord.equals("")) ? 1 : 0;
+        randomWordTotal += (endWord.equals("")) ? 1 : 0;
+
+        if (randomWordTotal >= 1){
+            List<String> randomWords = pickRandomWordsFromDictionary(randomWordTotal);
+            if (startWord.equals("")){
+                startWord = randomWords.get(0);
+                randomWords.remove(0);
+            }
+            if (endWord.equals("")){
+                endWord = randomWords.get(0);
+                randomWords.remove(0);
             }
         }
     }
