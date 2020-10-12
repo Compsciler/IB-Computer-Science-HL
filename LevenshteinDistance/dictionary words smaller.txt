@@ -1,0 +1,10 @@
+bat
+big
+bit
+cat
+dig
+dog
+doge
+fig
+fog
+xyz

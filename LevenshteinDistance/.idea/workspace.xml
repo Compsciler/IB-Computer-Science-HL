@@ -45,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,7 +54,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roger\OneDrive\Desktop\IB-Computer-Science-HL\LevenshteinDistance" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roger\OneDrive\Desktop\IB-Computer-Science-HL\LevenshteinDistance\src" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="LevenshteinDistance" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -67,6 +83,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -77,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602449038080</updated>
       <workItem from="1602449039178" duration="3986000" />
-      <workItem from="1602456516266" duration="36000" />
+      <workItem from="1602456516266" duration="15043000" />
     </task>
     <servers />
   </component>
@@ -97,6 +118,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="834" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602473980725">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="834" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1602473980725" />
+    <state width="2517" height="413" key="GridCell.Tab.0.bottom" timestamp="1602460228001">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1602460228001" />
+    <state width="2517" height="413" key="GridCell.Tab.0.center" timestamp="1602460228000">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1602460228000" />
+    <state width="2517" height="413" key="GridCell.Tab.0.left" timestamp="1602460228000">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1602460228000" />
+    <state width="2517" height="413" key="GridCell.Tab.0.right" timestamp="1602460228001">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1602460228001" />
     <state x="779" y="371" key="SettingsEditor" timestamp="1602454550236">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
