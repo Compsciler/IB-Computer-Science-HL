@@ -5,45 +5,55 @@ public class Main {
     public static Set<String> dictionaryWords;
     public static Map<String, Set<String>> dictionaryMap;
 
-    public static String startWord = "abbas";  // Must be in dictionary
-    public static String endWord = "abbes";  // Must be in dictionary
+    public static String startWord = "";  // Must be in dictionary
+    public static String endWord = "";  // Must be in dictionary
     public static Queue<String> wordsToVisit;
     public static Set<String> locatedWords;
     public static Map<String, String> parentWordMap;
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Calendar calendar = Calendar.getInstance();
-        float startTimeInMillis = calendar.getTimeInMillis();
+    public static final int NUM_WORD_PAIRS = 32;  // DEMO 12
 
-        dictionaryWords = new HashSet<>();
+    public static void main(String[] args) throws FileNotFoundException {
+        long startTimeInMillis = System.currentTimeMillis();
+
+        dictionaryWords = new HashSet<>();  // DEMO 1
         dictionaryMap = new HashMap<>();
 
-        loadDictionary("dictionary words small.txt");
-        // System.out.println(dictionaryMap);
-
-        pickRandomStartAndEndWordIfEmpty();
-        List<String> levSequence = calculateLevDistance(startWord, endWord);
-        int levDistance = (levSequence.size() == 0) ? -1 : (levSequence.size() - 1);
-        System.out.println(startWord + " -> " + endWord + ": " + levDistance);
-        System.out.println(levSequence);
-
-        float endTimeInMillis = calendar.getTimeInMillis();
-        System.out.println("Execution time: " + (endTimeInMillis - startTimeInMillis) * 1000 + " s");
-    }
-
-    public static List<String> calculateLevDistance(String word1, String word2) {
         wordsToVisit = new PriorityQueue<>();
         locatedWords = new HashSet<>();
         parentWordMap = new HashMap<>();  // Key word's parent is value word
+
+        loadDictionary("dictionary words small.txt");  // DEMO 2
+        // System.out.println(dictionaryMap);
+
+        pickRandomStartAndEndWordIfEmpty();  // DEMO 3
+        printLevDistance(startWord, endWord, false);  // DEMO 5, DEMO 13
+        for (int i = 1; i < NUM_WORD_PAIRS; i++) {
+            resetLevCalculator();
+            pickRandomStartAndEndWordIfEmpty();
+            printLevDistance(startWord, endWord, false);
+        }
+
+        long endTimeInMillis = System.currentTimeMillis();
+        System.out.println("Execution time: " + (endTimeInMillis - startTimeInMillis) / 1000.0 + " s");
+    }
+
+    public static List<String> calculateLevDistance(String word1, String word2) {
+        if (word1.length() != word2.length()) {
+            return null;
+        }
+
         boolean isWord2Found = false;
 
-        addAdjacentWords(word1);
+        updateMapWithLevAdjacent(word1);  // DEMO 7
+        addAdjacentWords(word1);  // DEMO 10
         while (!wordsToVisit.isEmpty()) {
             String currentWord = wordsToVisit.poll();
             if (currentWord.equals(word2)) {
                 isWord2Found = true;
                 break;
             }
+            updateMapWithLevAdjacent(currentWord);
             addAdjacentWords(currentWord);
         }
 
@@ -58,12 +68,29 @@ public class Main {
         return res;
     }
 
+    public static void printLevDistance(String word1, String word2, boolean isPrintingIfUnequalLengths) {
+        List<String> levSequence = calculateLevDistance(word1, word2);  // DEMO 6
+        int levDistance;
+        if (levSequence == null) {
+            if (isPrintingIfUnequalLengths) {
+                levDistance = -1;
+            } else {
+                return;
+            }
+        } else {
+            levDistance = (levSequence.size() == 0) ? -1 : (levSequence.size() - 1);
+        }
+        System.out.println(startWord + " -> " + endWord + ": " + levDistance);
+        System.out.println(levSequence);
+        System.out.println();
+    }
+
     public static void addAdjacentWords(String word) {
         Set<String> adjacentWords = dictionaryMap.get(word);
         if (adjacentWords != null) {
             adjacentWords.removeAll(locatedWords);
             for (String adjacentWord : adjacentWords) {
-                wordsToVisit.add(adjacentWord);
+                wordsToVisit.add(adjacentWord);  // DEMO 11
                 parentWordMap.put(adjacentWord, word);
                 locatedWords.add(adjacentWord);  // Moved inside loop to not create long distance of [fig, big, dig, dog]
             }
@@ -77,12 +104,16 @@ public class Main {
         // Reduces n^2 searches to n(n-1)/2
         while (sc.hasNextLine()) {
             String newWord = sc.nextLine();
-            for (String dictionaryWord : dictionaryWords) {
-                if (areWordsLevAdjacent(newWord, dictionaryWord)) {
-                    updateMap(newWord, dictionaryWord);
-                }
-            }
+            // updateMapWithLevAdjacent(newWord);
             dictionaryWords.add(newWord);
+        }
+    }
+
+    public static void updateMapWithLevAdjacent(String word) {
+        for (String dictionaryWord : dictionaryWords) {
+            if (areWordsLevAdjacent(word, dictionaryWord)) {  // DEMO 8
+                updateMap(word, dictionaryWord);  // DEMO 9
+            }
         }
     }
 
@@ -147,7 +178,7 @@ public class Main {
         randomWordTotal += (endWord.equals("")) ? 1 : 0;
 
         if (randomWordTotal >= 1) {
-            List<String> randomWords = pickRandomWordsFromDictionary(randomWordTotal);
+            List<String> randomWords = pickRandomWordsFromDictionary(randomWordTotal);  // DEMO 4
             if (startWord.equals("")) {
                 startWord = randomWords.get(0);
                 randomWords.remove(0);
@@ -157,6 +188,14 @@ public class Main {
                 randomWords.remove(0);
             }
         }
+    }
+
+    public static void resetLevCalculator() {
+        startWord = "";
+        endWord = "";
+        wordsToVisit.clear();
+        locatedWords.clear();
+        parentWordMap.clear();
     }
 
     /*
