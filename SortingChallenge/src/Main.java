@@ -9,12 +9,12 @@ public class Main {
         SCANNER, BUFFERED_READER
     }
     private enum SortingMethod {
-        DEFAULT_SORT, RADIX_SORT
+        MERGE_SORT, RADIX_SORT, COUNTING_SORT
     }
 
     private static DataFile dataFile = DataFile.RANDOM1;
     private static DataReadingMethod dataReadingMethod = DataReadingMethod.BUFFERED_READER;
-    private static SortingMethod sortingMethod = SortingMethod.RADIX_SORT;
+    private static SortingMethod sortingMethod = SortingMethod.COUNTING_SORT;
 
     private static ArrayList arr;
     private static PrintWriter out;
@@ -25,11 +25,14 @@ public class Main {
 
         long sortStartTime = System.nanoTime();
         switch (sortingMethod){
-            case DEFAULT_SORT:
-                defaultSort();
+            case MERGE_SORT:
+                mergeSort();
                 break;
             case RADIX_SORT:
                 radixSort();
+                break;
+            case COUNTING_SORT:
+                countingSort(100000);  // Only for random1.txt
                 break;
         }
         long sortTime = (System.nanoTime() - sortStartTime) / 1000000;
@@ -40,7 +43,7 @@ public class Main {
         System.out.println("Total time: " + totalTime + " ms");
     }
 
-    public static void defaultSort(){
+    public static void mergeSort(){
         Collections.sort(arr);
     }
 
@@ -71,6 +74,22 @@ public class Main {
                 bucket[b].clear();
             }
             placement *= RADIX;
+        }
+    }
+
+    // Source: https://www.java67.com/2017/06/counting-sort-in-java-example.html
+    public static void countingSort(int k) {  // k is the maximum of the values to be sorted
+        int counter[] = new int[k + 1];
+        for (Object obj: arr) {
+            int i = (int) obj;
+            counter[i]++;
+        }
+        int ndx = 0;
+        for (int i = 0; i < counter.length; i++) {
+            while (0 < counter[i]) {
+                arr.set(ndx++, i);
+                counter[i]--;
+            }
         }
     }
 
