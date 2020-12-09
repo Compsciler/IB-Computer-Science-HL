@@ -9,14 +9,14 @@ public class Main {
         SCANNER, BUFFERED_READER
     }
     private enum SortingMethod {
-        MERGE_SORT, RADIX_SORT, COUNTING_SORT
+        MERGE_SORT, RADIX_SORT, COUNTING_SORT, BUCKET_SORT, QUICK_SORT
     }
 
-    private static DataFile dataFile = DataFile.RANDOM1;
+    private static DataFile dataFile = DataFile.RANDOM3;
     private static DataReadingMethod dataReadingMethod = DataReadingMethod.BUFFERED_READER;
     private static SortingMethod sortingMethod = SortingMethod.COUNTING_SORT;
 
-    private static ArrayList arr;
+    private static List arr;
     private static PrintWriter out;
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -34,6 +34,11 @@ public class Main {
             case COUNTING_SORT:
                 countingSort(100000);  // Only for random1.txt
                 break;
+            case BUCKET_SORT:
+                bucketSort(1000000000);  // Currently does not work
+                break;
+            case QUICK_SORT:
+                quickSort(arr);
         }
         long sortTime = (System.nanoTime() - sortStartTime) / 1000000;
         System.out.println("Sort time: " + sortTime + " ms");
@@ -92,6 +97,87 @@ public class Main {
             }
         }
     }
+
+    // Source: https://www.programiz.com/dsa/bucket-sort
+    public static <T> void bucketSort(int n) {
+        if (n <= 0)
+            return;
+        @SuppressWarnings("unchecked")
+        List<T>[] bucket = new ArrayList[n];
+
+        // Create empty buckets
+        for (int i = 0; i < n; i++)
+            bucket[i] = new ArrayList<T>();
+
+        // Add elements into the buckets
+        for (int i = 0; i < n; i++) {
+            int bucketIndex = (int) arr.get(i) * n;
+            bucket[bucketIndex].add((T) arr.get(i));
+        }
+
+        // Sort the elements of each bucket
+        for (int i = 0; i < n; i++) {
+            Collections.sort((List)(bucket[i]));
+        }
+
+        // Get the sorted array
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0, size = bucket[i].size(); j < size; j++) {
+                arr.set(index++, bucket[i].get(j));
+            }
+        }
+    }
+
+    // Source: https://gist.github.com/djitz/2152957
+    private static < T > List  quickSort(List < T > input) {
+
+        if (input.size() <= 1) {
+            return input;
+        }
+
+        int middle = (int) Math.ceil((double) input.size() / 2);
+        T pivot = input.get(middle);
+
+        List < T > less = new ArrayList < T > ();
+        List < T > greater = new ArrayList < T > ();
+
+        for (int i = 0; i < input.size(); i++) {
+            boolean b;
+            try {
+                b = (double)input.get(i) <= (double)pivot;
+            } catch (ClassCastException e){
+                b = (int)input.get(i) <= (int)pivot;
+            }
+            if (b) {
+                if (i == middle) {
+                    continue;
+                }
+                less.add(input.get(i));
+            } else {
+                greater.add(input.get(i));
+            }
+        }
+
+        return concatenate(quickSort(less), pivot, quickSort(greater));
+    }
+    private static < T > List  concatenate(List < T > less, T pivot, List < T > greater) {
+
+        List < T > list = new ArrayList < T > ();
+
+        for (int i = 0; i < less.size(); i++) {
+            list.add(less.get(i));
+        }
+
+        list.add(pivot);
+
+        for (int i = 0; i < greater.size(); i++) {
+            list.add(greater.get(i));
+        }
+
+        return list;
+    }
+
 
     public static void readData() throws FileNotFoundException, IOException {
         String fileName = "";
