@@ -9,12 +9,12 @@ public class Main {
         SCANNER, BUFFERED_READER
     }
     private enum SortingMethod {
-        DEFAULT_SORT
+        DEFAULT_SORT, RADIX_SORT
     }
 
-    private static DataFile dataFile = DataFile.RANDOM2;
+    private static DataFile dataFile = DataFile.RANDOM1;
     private static DataReadingMethod dataReadingMethod = DataReadingMethod.BUFFERED_READER;
-    private static SortingMethod sortingMethod = SortingMethod.DEFAULT_SORT;
+    private static SortingMethod sortingMethod = SortingMethod.RADIX_SORT;
 
     private static ArrayList arr;
     private static PrintWriter out;
@@ -28,6 +28,9 @@ public class Main {
             case DEFAULT_SORT:
                 defaultSort();
                 break;
+            case RADIX_SORT:
+                radixSort();
+                break;
         }
         long sortTime = (System.nanoTime() - sortStartTime) / 1000000;
         System.out.println("Sort time: " + sortTime + " ms");
@@ -39,6 +42,36 @@ public class Main {
 
     public static void defaultSort(){
         Collections.sort(arr);
+    }
+
+    // Source: https://www.java67.com/2018/03/how-to-implement-radix-sort-in-java.html
+    public static void radixSort(){
+        final int RADIX = 10;
+        List < Integer > [] bucket = new ArrayList[RADIX];
+        for (int i = 0; i < bucket.length; i++) {
+            bucket[i] = new ArrayList < Integer > ();
+        }
+        boolean maxLength = false;
+        int tmp = -1, placement = 1;
+        while (!maxLength) {
+            maxLength = true;
+            for (Object obj : arr) {
+                int i = (int) obj;
+                tmp = i / placement;
+                bucket[tmp % RADIX].add(i);
+                if (maxLength && tmp > 0) {
+                    maxLength = false;
+                }
+            }
+            int a = 0;
+            for (int b = 0; b < RADIX; b++) {
+                for (Integer i : bucket[b]) {
+                    arr.set(a++, i);
+                }
+                bucket[b].clear();
+            }
+            placement *= RADIX;
+        }
     }
 
     public static void readData() throws FileNotFoundException, IOException {
@@ -82,12 +115,12 @@ public class Main {
                     case RANDOM1:
                     case RANDOM2:
                         for (String line = f.readLine(); line != null; line = f.readLine()){
-                            arr.add(Double.parseDouble(line));
+                            arr.add(Integer.parseInt(line));
                         }
                         break;
                     case RANDOM3:
                         for (String line = f.readLine(); line != null; line = f.readLine()){
-                            arr.add(Integer.parseInt(line));
+                            arr.add(Double.parseDouble(line));
                         }
                 }
         }
