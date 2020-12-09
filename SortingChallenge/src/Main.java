@@ -14,7 +14,7 @@ public class Main {
 
     private static DataFile dataFile = DataFile.RANDOM3;
     private static DataReadingMethod dataReadingMethod = DataReadingMethod.BUFFERED_READER;
-    private static SortingMethod sortingMethod = SortingMethod.COUNTING_SORT;
+    private static SortingMethod sortingMethod = SortingMethod.MERGE_SORT;
 
     private static List arr;
     private static PrintWriter out;
