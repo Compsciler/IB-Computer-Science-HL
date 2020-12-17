@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         // printBinary(-59595);
         // System.out.println(isPalindrome("raccecar"));
         // crawl("C:\\Users\\roger\\OneDrive\\Desktop\\IB-Computer-Science-HL\\untitled");
@@ -9,12 +9,13 @@ public class Main {
         // int[] arr = {2, 3, 5, 7, 11, 13, 17, 19};
         // System.out.println(binarySearch(arr, 10));
         // System.out.println(reverse("12345"));
-        Queue<Integer> q = new LinkedList<>();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        mirror(q);
+        // Queue<Integer> q = new LinkedList<>();
+        // q.add(1);
+        // q.add(2);
+        // q.add(3);
+        // q.add(4);
+        // mirror(q);
+        printIndexedItemsOnly(new int[]{0, 1});
     }
     public static void printBinary(int n){
         System.out.println(binaryString(Math.abs(n), (n < 0)));
@@ -150,5 +151,24 @@ public class Main {
             queue.add(stack.pop());
         }
         System.out.println(queue);
+    }
+
+    public static void printIndexedItemsOnly(int[] indicesToKeep) throws FileNotFoundException {
+        File data = new File("data.txt");
+        Scanner sc = new Scanner(data);
+        while (sc.hasNextLine()) {
+            String lineToPrint = "";
+            int tokenIndex = 0;
+            while (sc.hasNext()) {
+                String token = sc.next();
+                if (Arrays.binarySearch(indicesToKeep, tokenIndex) >= 0) {
+                    lineToPrint += token + " ";
+                }
+                tokenIndex++;
+            }
+            lineToPrint = lineToPrint.substring(0, lineToPrint.length() - 1);
+            System.out.println(lineToPrint);
+            sc.nextLine();
+        }
     }
 }
