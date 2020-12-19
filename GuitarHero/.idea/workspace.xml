@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0804048d-9d1c-495a-9fe1-9fc2816bc817" name="Default Changelist" comment="" />
+    <list default="true" id="0d38958e-2f66-4ba6-b4cd-ab655215eb61" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1lljpBb05UV2AZgdBjQhAvQ5UkO" />
+  <component name="ProjectId" id="1lrTSwsm4zy0ZxSoggV5k7GdYqG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,30 +53,33 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roger\OneDrive\Desktop\IB-Computer-Science-HL\GuitarHero\src" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="ReversePolishNotationCalculator" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0804048d-9d1c-495a-9fe1-9fc2816bc817" name="Default Changelist" comment="" />
-      <created>1608178756403</created>
+      <changelist id="0d38958e-2f66-4ba6-b4cd-ab655215eb61" name="Default Changelist" comment="" />
+      <created>1608354215530</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608178756403</updated>
-      <workItem from="1608178757499" duration="3796000" />
-      <workItem from="1608354180949" duration="34000" />
+      <updated>1608354215530</updated>
+      <workItem from="1608354216623" duration="1307000" />
     </task>
     <servers />
   </component>
@@ -92,28 +96,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2517" height="414" key="GridCell.Tab.0.bottom" timestamp="1608184243498">
+    <state x="1061" y="476" key="FileChooserDialogImpl" timestamp="1608357869566">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="414" key="GridCell.Tab.0.bottom/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608184243498" />
-    <state width="2517" height="414" key="GridCell.Tab.0.center" timestamp="1608184243498">
+    <state x="1061" y="476" key="FileChooserDialogImpl/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608357869566" />
+    <state x="0" y="0" width="1902" height="1426" key="dock-window-1" timestamp="1608358081069">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="414" key="GridCell.Tab.0.center/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608184243498" />
-    <state width="2517" height="414" key="GridCell.Tab.0.left" timestamp="1608184243498">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2517" height="414" key="GridCell.Tab.0.left/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608184243498" />
-    <state width="2517" height="414" key="GridCell.Tab.0.right" timestamp="1608184243498">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2517" height="414" key="GridCell.Tab.0.right/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608184243498" />
-    <state x="731" y="341" key="new project wizard" timestamp="1608354213386">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="731" y="341" key="new project wizard/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608354213386" />
+    <state x="0" y="0" width="1902" height="1426" key="dock-window-1/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608358081069" />
   </component>
 </project>
