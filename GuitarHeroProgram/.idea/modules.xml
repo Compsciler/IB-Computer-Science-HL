@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GuitarHero.iml" filepath="$PROJECT_DIR$/GuitarHero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GuitarHeroProgram.iml" filepath="$PROJECT_DIR$/GuitarHeroProgram.iml" />
     </modules>
   </component>
 </project>

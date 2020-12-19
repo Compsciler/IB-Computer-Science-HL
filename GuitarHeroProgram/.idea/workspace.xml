@@ -45,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/string.txt" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,17 +59,31 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration name="GuitarHero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GuitarHero" />
+      <module name="GuitarHeroProgram" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GuitarHero" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,7 +93,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608354215530</updated>
-      <workItem from="1608354216623" duration="1307000" />
+      <workItem from="1608354216623" duration="1962000" />
+      <workItem from="1608359108911" duration="5390000" />
     </task>
     <servers />
   </component>
@@ -96,15 +111,37 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1061" y="476" key="FileChooserDialogImpl" timestamp="1608357869566">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="4636" y="746" key="FileChooserDialogImpl" timestamp="1608359757576">
+      <screen x="3840" y="389" width="1920" height="1080" />
     </state>
     <state x="1061" y="476" key="FileChooserDialogImpl/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608357869566" />
+    <state x="4636" y="746" key="FileChooserDialogImpl/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608359757576" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1608364413368">
+      <screen x="3840" y="389" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608364413368" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1608364413368">
+      <screen x="3840" y="389" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608364413368" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1608364413368">
+      <screen x="3840" y="389" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608364413368" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1608364413368">
+      <screen x="3840" y="389" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608364413368" />
     <state x="0" y="0" width="1902" height="1426" key="dock-window-1" timestamp="1608358081069">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="0" y="0" width="1902" height="1426" key="dock-window-1/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1608358081069" />
+    <state x="4021" y="511" width="587" height="801" key="find.popup" timestamp="1608364325706">
+      <screen x="3840" y="389" width="1920" height="1080" />
+    </state>
+    <state x="4021" y="511" width="587" height="801" key="find.popup/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1608364325706" />
   </component>
 </project>
