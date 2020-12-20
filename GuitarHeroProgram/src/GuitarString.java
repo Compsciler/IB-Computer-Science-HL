@@ -1,119 +1,41 @@
 import java.io.*;
 import java.util.*;
 
-/// NOT MY CODE
 public class GuitarString {
+    private Queue<Double> sampleQueue;
+    private int samplingRateForNote;  /// Sampling rate (44100 samples/second) divided by note frequency in hertz
+    private double randomDisplacement = 0.5;
+    private double volumeFade = 0.996;
 
-    private final double  DECAY_FACTOR = 0.996;
-    private Queue<Double> ringbuffer;
-    private int sampleNum;
-
-
-
-
-    /**
-     *  Constructs a guitar string of the given frequency.
-     *  <p>It creates a ring buffer of the desired capacity <b> N </b> (sampling rate divided by frequency, rounded to the nearest integer),
-     *  and initializes it to represent a guitar string at rest by enqueueing <b> N </b> zeros.
-     *  The sampling rate is specified by the constant <em>`StdAudio.SAMPLE_RATE`.</em>
-     *  If the frequency is less than or equal to 0 or if the resulting size of the ring buffer would be less than 2,
-     *  the method throw an `IllegalArgumentException`.
-     *
-     * @param frequency that is larger than 0
-     * @throws IllegalArgumentException
-     *
-     */
-    public GuitarString( double frequency ){
-
-
-        sampleNum = Math.round((float)(StdAudio.SAMPLE_RATE/frequency));
-
-        if( frequency <= 0 || sampleNum < 2 ){
-            throw new IllegalArgumentException();
-        }
-
-        ringbuffer = new LinkedList<>();
-        for( int i = 0; i < sampleNum; i++){
-            ringbuffer.add(0.0);
-
+    public GuitarString(double frequency){
+        samplingRateForNote = (int)(StdAudio.SAMPLE_RATE / frequency);
+        sampleQueue = new LinkedList<>();
+        for(int i = 0; i < samplingRateForNote; i++){
+            sampleQueue.add(0.0);  /// Temporary 0's added as placeholders to keep queue size constant at the sampling rate per specific note
         }
     }
 
+    public GuitarString(double[] arr){
+        /// Only needed for testing
+    }
 
 
-    /**
-     * Constructs a guitar string and initializes the contents of the ring buffer to the values in the array.
-     * <p>If the array has fewer than two elements, the constructor throw an `IllegalArgumentException`.
-     * <em>This constructor is used only for testing purposes.</em>
-     *
-     *
-     * @param  init - an Array of decimal numbers
-     * @throws IllegalArgumentException
-     */
-    public GuitarString( double[] init ){
-
-        sampleNum = init.length;
-
-        if(sampleNum < 2) {
-            throw new IllegalArgumentException();
+    public void pluck(){
+        for(int i = 0; i < samplingRateForNote; i++){
+            Random rand = new Random();
+            double displacement = rand.nextDouble() * randomDisplacement;
+            boolean isNegative = rand.nextBoolean();
+            sampleQueue.add((displacement * ((isNegative ? -1 : 1))));
+            sampleQueue.remove();
         }
-
-        ringbuffer = new LinkedList<>();
-
-        for(Double values: init){
-            ringbuffer.add(values);
-        }
-
-        System.out.println(ringbuffer);
     }
 
-
-
-    /**
-     * This method replaces the N elements in the ring buffer with N random values
-     * between -0.5 inclusive and +0.5 exclusive (i.e. -0.5 <= value < 0.5)
-     *
-     * @modifies ringbuffer
-     */
-    public void pluck( ){
-
-        for(int i = 0; i < sampleNum; i++){
-            ringbuffer.add(Math.random() - 0.5);
-            ringbuffer.remove();
-        }
-
+    public void tic() {
+        sampleQueue.add(volumeFade * (sampleQueue.remove() + sampleQueue.peek()) / 2);  /// Removes front of queue and adds faded average of previous first 2 doubles
     }
 
-
-    /**
-     *
-     * This method applies the Karplus-Strong update <b>ONCE</b>.
-     * <p>It delete the sample at the front of the ring buffer and add to the end of the ring buffer the average of the first two samples, multiplied by the energy decay factor (0.996)
-     * DECAY_FACTOR = 0.996
-     *
-     * @modifies ringbuffer
-     */
-    public void tic( ) {
-
-        double first = ringbuffer.remove();
-        double second = ringbuffer.peek();
-        ringbuffer.add(DECAY_FACTOR * 0.5 * (first + second));
-
+    public double sample(){
+        return sampleQueue.peek();
     }
-
-
-
-    /**
-     * This method should return the current sample (the value at the front of the ring buffer)
-     * @return the front value of the ring buffer
-     */
-    public double sample( ){
-
-        return ringbuffer.peek();
-
-    }
-
-
-
 }
 
