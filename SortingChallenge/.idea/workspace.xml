@@ -82,6 +82,8 @@
       <workItem from="1607489666724" duration="8713000" />
       <workItem from="1607541526983" duration="31000" />
       <workItem from="1607845488505" duration="17000" />
+      <workItem from="1609113179824" duration="717000" />
+      <workItem from="1610242502898" duration="141000" />
     </task>
     <servers />
   </component>
@@ -109,10 +111,10 @@
       <screen x="3840" y="389" width="1920" height="1080" />
     </state>
     <state x="4254" y="584" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1607480114394" />
-    <state x="1061" y="476" key="FileChooserDialogImpl" timestamp="1607845500130">
+    <state x="1061" y="476" key="FileChooserDialogImpl" timestamp="1610242634145">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1061" y="476" key="FileChooserDialogImpl/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1607845500130" />
+    <state x="1061" y="476" key="FileChooserDialogImpl/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1610242634145" />
     <state width="2517" height="289" key="GridCell.Tab.0.bottom" timestamp="1607498462961">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -137,6 +139,10 @@
       <screen x="3840" y="389" width="1920" height="1080" />
     </state>
     <state x="4617" y="843" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1440/3840.389.1920.1080@3840.389.1920.1080" timestamp="1607494782525" />
+    <state x="731" y="341" key="new project wizard" timestamp="1610242641636">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="731" y="341" key="new project wizard/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1610242641636" />
     <state x="4463" y="624" width="672" height="678" key="search.everywhere.popup" timestamp="1607493756219">
       <screen x="3840" y="389" width="1920" height="1080" />
     </state>
