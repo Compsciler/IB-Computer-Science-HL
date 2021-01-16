@@ -6,7 +6,7 @@ public class Main {
     private static List<String> graveyard;
 
     public static void main(String[] args) throws FileNotFoundException {
-        killRing = new LinkedList<>();
+        killRing = new LinkedList2<>();
         graveyard = new ArrayList<>();
         // loadKillRing("input.txt");
 
@@ -21,13 +21,29 @@ public class Main {
     }
 
     public static void kill(String killer){
-        List<String> killRingClone = new LinkedList<>(killRing);
-        Iterator<String> killRingIter = killRingClone.iterator();
+        // List<String> killRingClone = new LinkedList<>(killRing);
+        // Iterator<String> killRingIter = killRingClone.iterator();
+        Iterator<String> killRingIter = killRing.iterator();
         while (killRingIter.hasNext()){
             String s = killRingIter.next();
             if (killRingIter.next().equals(killer)){
 
             }
         }
+    }
+}
+
+class LinkedList2 <T> extends LinkedList<T> {
+    @Override
+    public int indexOf(Object o){
+        Iterator<T> iter = iterator();
+        int index = 0;
+        while (iter.hasNext()){
+            if (iter.next().equals(o)){
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 }
