@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class ConsoleOutput {
-    public static final int SETPOINT = 70;
+    public static final int TARGET_NUM = 70;
     public static final int MIN_RANGE = 40;
     public static final int MAX_RANGE = 100;
     public static final int INCREMENT = 1;
@@ -14,7 +14,7 @@ public class ConsoleOutput {
         for (int i = MIN_RANGE; i <= MAX_RANGE; i += INCREMENT){
             if (i == n){
                 numberLine += "X";
-            } else if (i == SETPOINT){
+            } else if (i == TARGET_NUM){
                 numberLine += "|";
             } else if (i % PERIOD_GROUP_SIZE == 0){
                 numberLine += ":";
