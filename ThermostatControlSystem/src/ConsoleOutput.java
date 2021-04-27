@@ -1,12 +1,12 @@
-import java.io.IOException;
+import java.io.*;
 
 public class ConsoleOutput {
-    public static final int TARGET_NUM = 70;
     public static final int MIN_RANGE = 40;
     public static final int MAX_RANGE = 100;
     public static final int INCREMENT = 1;
     public static final int PERIOD_GROUP_SIZE = 5;
 
+    public static int targetNum;
     private static boolean isInvokeCanceled = false;
 
     public static void printNumberLine(int n){
@@ -14,7 +14,7 @@ public class ConsoleOutput {
         for (int i = MIN_RANGE; i <= MAX_RANGE; i += INCREMENT){
             if (i == n){
                 numberLine += "X";
-            } else if (i == TARGET_NUM){
+            } else if (i == targetNum){
                 numberLine += "|";
             } else if (i % PERIOD_GROUP_SIZE == 0){
                 numberLine += ":";
@@ -49,7 +49,18 @@ public class ConsoleOutput {
         }
     }
 
+    public static int roundToInt(double n){
+        return (int)Math.round(n);
+    }
+
     public static void cancelInvoke(){
         isInvokeCanceled = true;
+    }
+
+    public static int getTargetNum() {
+        return targetNum;
+    }
+    public static void setTargetNum(int targetNum) {
+        ConsoleOutput.targetNum = targetNum;
     }
 }

@@ -1,10 +1,19 @@
+import java.util.*;
+
 public class ThermostatSimulation {
     private double setpointTemp = 70;
-    private double startingTemp = 50;
+    private double temp = 50;
     private double heatingPower = 0;
     private double deltaTime = 1;
 
-    private double error = setpointTemp - startingTemp;
+    enum NoiseType {
+        CONSTANT, PROPORTIONAL;
+    }
+    private NoiseType noiseType = NoiseType.PROPORTIONAL;
+    private double kNoise = 1;
+    private boolean isKNoiseRandom = true;
+
+    private double error = setpointTemp - temp;
     private double proportional = 0;
     private double integral = 0;
     private double derivative = 0;
@@ -15,12 +24,40 @@ public class ThermostatSimulation {
 
     public void update(){
         double prevError = error;
-        startingTemp += heatingPower;
-        error = setpointTemp - startingTemp;
+        temp += heatingPower;
+
+        double kNoiseVal = kNoise;
+        if (isKNoiseRandom){
+            Random rand = new Random();
+            kNoiseVal = -kNoise + rand.nextDouble() * kNoise * 2;
+        }
+        switch (noiseType){
+            case CONSTANT:
+                temp += kNoiseVal;
+                break;
+            case PROPORTIONAL:
+                temp += heatingPower * kNoiseVal;
+        }
+
+        error = setpointTemp - temp;
 
         proportional = kP * error;
         integral += kI * error * deltaTime;
         derivative = kD * (error - prevError) / deltaTime;
+    }
+
+    public double getSetpointTemp() {
+        return setpointTemp;
+    }
+    public void setSetpointTemp(double setpointTemp) {
+        this.setpointTemp = setpointTemp;
+    }
+
+    public double getTemp() {
+        return temp;
+    }
+    public void setTemp(double temp) {
+        this.temp = temp;
     }
 
     public double getHeatingPower() {
