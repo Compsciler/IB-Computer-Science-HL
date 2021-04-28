@@ -8,11 +8,17 @@ public class OpenLoopController implements Controller {
         OpenLoopController open = new OpenLoopController();
         open.thermostat = new ThermostatSimulation();
         ConsoleOutput.setTargetNum(ConsoleOutput.roundToInt(open.thermostat.getSetpointTemp()));
-        open.openLoopHeatingPower = (open.thermostat.getSetpointTemp() - open.thermostat.getTemp()) / HEATING_TIME;
+        open.openLoopHeatingPower = open.calculateHeatingPower();
         for (int i = 0; i <= HEATING_TIME; i++){
             ConsoleOutput.printNumberLine(ConsoleOutput.roundToInt(open.thermostat.getTemp()));
             open.nextLoop();
         }
+    }
+
+    @Override
+    public double calculateHeatingPower(){
+        double deltaTempPerTime = (thermostat.getSetpointTemp() - thermostat.getTemp()) / HEATING_TIME;
+        return (deltaTempPerTime - thermostat.getA0()) / thermostat.getA1();
     }
 
     @Override

@@ -17,6 +17,7 @@ public class PID_LoopController implements Controller {
         }
     }
 
+    @Override
     public double calculateHeatingPower(){
         return thermostat.getProportional() * kP + thermostat.getIntegral() * kI + thermostat.getDerivative() * kD;
     }

@@ -53,7 +53,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.PID_LoopController">
+  <component name="RunManager" selected="Application.OpenLoopController">
     <configuration name="OpenLoopController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OpenLoopController" />
       <module name="ThermostatControlSystem" />
@@ -68,23 +68,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PID_LoopController" />
         <item itemvalue="Application.OpenLoopController" />
+        <item itemvalue="Application.PID_LoopController" />
       </list>
     </recent_temporary>
   </component>
@@ -97,7 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619494536462</updated>
       <workItem from="1619494537616" duration="8268000" />
-      <workItem from="1619537395143" duration="15007000" />
+      <workItem from="1619537395143" duration="15094000" />
+      <workItem from="1619573728017" duration="5289000" />
     </task>
     <servers />
   </component>
@@ -121,42 +120,42 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="736" y="376" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619495350651" />
-    <state x="1086" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1619570669581">
+    <state x="1086" y="405" key="#com.intellij.ide.util.MemberChooser" timestamp="1619580056915">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1086" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619570669581" />
-    <state width="2517" height="413" key="GridCell.Tab.0.bottom" timestamp="1619573295100">
+    <state x="1086" y="405" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619580056915" />
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="413" key="GridCell.Tab.0.bottom/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619573295100" />
-    <state width="2517" height="413" key="GridCell.Tab.0.center" timestamp="1619573295100">
+    <state width="2517" height="508" key="GridCell.Tab.0.bottom/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.0.center" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="413" key="GridCell.Tab.0.center/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619573295100" />
-    <state width="2517" height="413" key="GridCell.Tab.0.left" timestamp="1619573295100">
+    <state width="2517" height="508" key="GridCell.Tab.0.center/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.0.left" timestamp="1619581153978">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="413" key="GridCell.Tab.0.left/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619573295100" />
-    <state width="2517" height="413" key="GridCell.Tab.0.right" timestamp="1619573295100">
+    <state width="2517" height="508" key="GridCell.Tab.0.left/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153978" />
+    <state width="2517" height="508" key="GridCell.Tab.0.right" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="413" key="GridCell.Tab.0.right/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619573295100" />
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1619571994936">
+    <state width="2517" height="508" key="GridCell.Tab.0.right/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619571994936" />
-    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1619571994936">
+    <state width="2517" height="508" key="GridCell.Tab.1.bottom/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.1.center" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619571994936" />
-    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1619571994936">
+    <state width="2517" height="508" key="GridCell.Tab.1.center/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.1.left" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619571994936" />
-    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1619571994936">
+    <state width="2517" height="508" key="GridCell.Tab.1.left/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
+    <state width="2517" height="508" key="GridCell.Tab.1.right" timestamp="1619581153979">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619571994936" />
+    <state width="2517" height="508" key="GridCell.Tab.1.right/0.0.2560.1440/3840.389.1920.1080@0.0.2560.1440" timestamp="1619581153979" />
     <state x="976" y="378" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619562046533">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

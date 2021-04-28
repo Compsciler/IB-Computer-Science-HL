@@ -9,7 +9,7 @@ public class ThermostatSimulation {
     enum NoiseType {
         CONSTANT, PROPORTIONAL;
     }
-    private NoiseType noiseType = NoiseType.PROPORTIONAL;
+    private NoiseType noiseType = NoiseType.CONSTANT;
     private double kNoise = 1;
     private boolean isKNoiseRandom = true;
 
@@ -19,9 +19,13 @@ public class ThermostatSimulation {
     private double integral = 0;
     private double derivative = 0;
 
+    // Plant transfer function?
+    private double a0 = -5;
+    private double a1 = 0.9;
+
     public void update(){
         double prevError = error;
-        temp += heatingPower;
+        temp += heatingPower * a1 + a0;
 
         double kNoiseVal = kNoise;
         if (isKNoiseRandom){
@@ -83,5 +87,19 @@ public class ThermostatSimulation {
     }
     public void setDerivative(double derivative) {
         this.derivative = derivative;
+    }
+
+    public double getA0() {
+        return a0;
+    }
+    public void setA0(double a0) {
+        this.a0 = a0;
+    }
+
+    public double getA1() {
+        return a1;
+    }
+    public void setA1(double a1) {
+        this.a1 = a1;
     }
 }
