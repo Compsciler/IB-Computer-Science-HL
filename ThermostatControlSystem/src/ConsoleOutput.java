@@ -26,6 +26,8 @@ public class ConsoleOutput {
         System.out.println(numberLine);
     }
 
+    // runtime.exec() does not work
+    /*
     public static void invokeRepeating(String methodName, long startTime, long repeatRate, Object... methodParams) throws InterruptedException, IOException {
         Thread.sleep(startTime);
         Runtime runtime = Runtime.getRuntime();
@@ -49,12 +51,13 @@ public class ConsoleOutput {
         }
     }
 
-    public static int roundToInt(double n){
-        return (int)Math.round(n);
-    }
-
     public static void cancelInvoke(){
         isInvokeCanceled = true;
+    }
+    */
+
+    public static int roundToInt(double n){
+        return (int)Math.round(n);
     }
 
     public static int getTargetNum() {

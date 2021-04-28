@@ -14,13 +14,10 @@ public class ThermostatSimulation {
     private boolean isKNoiseRandom = true;
 
     private double error = setpointTemp - temp;
-    private double proportional = 0;
+
+    private double proportional = error;
     private double integral = 0;
     private double derivative = 0;
-
-    private double kP = 1;
-    private double kI = 0.1;
-    private double kD = 0.2;
 
     public void update(){
         double prevError = error;
@@ -41,9 +38,9 @@ public class ThermostatSimulation {
 
         error = setpointTemp - temp;
 
-        proportional = kP * error;
-        integral += kI * error * deltaTime;
-        derivative = kD * (error - prevError) / deltaTime;
+        proportional = error;
+        integral += error * deltaTime;
+        derivative = (error - prevError) / deltaTime;
     }
 
     public double getSetpointTemp() {
@@ -65,5 +62,26 @@ public class ThermostatSimulation {
     }
     public void setHeatingPower(double heatingPower) {
         this.heatingPower = heatingPower;
+    }
+
+    public double getProportional() {
+        return proportional;
+    }
+    public void setProportional(double proportional) {
+        this.proportional = proportional;
+    }
+
+    public double getIntegral() {
+        return integral;
+    }
+    public void setIntegral(double integral) {
+        this.integral = integral;
+    }
+
+    public double getDerivative() {
+        return derivative;
+    }
+    public void setDerivative(double derivative) {
+        this.derivative = derivative;
     }
 }
